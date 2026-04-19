@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой первый сайт с мозгами и умным ии</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Мой первый сайт с мозгами и умным ии</h1>
+    <p>Напиши как настроение и как себя чувствуешь</p>
+    <form method="post">
+        <textarea id="message" name="message" rows="4" cols="50"
+                  placeholder="Например: Сегодня у меня хорошее настроение!" required>{{ user_text }}</textarea><br>
+        <button type="submit">Отправить</button>
+    </form>
+    {% if recommendation %}
+    <div class="result">
+        <h3>Рекомендации</h3>
+        <p>{{ recommendation }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
